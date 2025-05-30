@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "759413289118",
+    "project_id": "focustrack-ede3b",
+    "storage_bucket": "focustrack-ede3b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759413289118:android:444c0dfd8be16a0fbc8b8f",
+        "android_client_info": {
+          "package_name": "io.github.angelchv.focustrack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvnC1vMGBPGUau9Kv6EF3ybRu3HjnX3hY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
