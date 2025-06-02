@@ -10,6 +10,9 @@ You can delete your FocusTrack account in the following ways:
    **Profile > Settings > Delete Account**.  
    Follow the instructions to confirm deletion.
    
+   > The account deletion is immediate once confirmed in the app.  
+   > Deleting your account will permanently remove your profile and all your personal lists stored on our servers.
+   
 ---
 
 **Languages**: [Español](https://angelchv.github.io/FocusTrack/delete-account-es) | [English](https://angelchv.github.io/FocusTrack/delete-account-en)
