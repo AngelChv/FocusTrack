@@ -2,11 +2,7 @@
 title: Delete Account
 ---
 
-<p align="center">
-  <a href="https://angelchv.github.io/FocusTrack">🏠 ← Back to Home</a>
-</p>
-
-🏠 [Back to Home](https://angelchv.github.io/FocusTrack)
+[🏠 Home](./) | [🗑️ Delete Account (EN)](delete-account-en) | [🗑️ Eliminar Cuenta (ES)](delete-account-es)
 
 # Delete Your FocusTrack Account
 
