@@ -5,20 +5,13 @@ email: chv.angel.01@gmail.com
 url: "https://angelchv.github.io"
 baseurl: "/FocusTrack"
 
-theme: minima
+theme: jekyll-theme-cayman
 
-# Opciones del tema minima
-minima:
-  social_links:
-    github: angelchv
-
-# Mostrar última modificación (en entradas, si las usas)
-show_excerpts: true
-
-# Configuración de Markdown y build
+# Markdown y build
 markdown: kramdown
 kramdown:
   input: GFM
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -27,3 +20,4 @@ plugins:
 seo:
   type: Website
   name: FocusTrack
+  author: Ángel Chicote
