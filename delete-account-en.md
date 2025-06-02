@@ -2,6 +2,12 @@
 title: Delete Account
 ---
 
+<p align="center">
+  <a href="https://angelchv.github.io/FocusTrack">🏠 ← Back to Home</a>
+</p>
+
+🏠 [Back to Home](https://angelchv.github.io/FocusTrack)
+
 # Delete Your FocusTrack Account
 
 You can delete your FocusTrack account in the following ways:
