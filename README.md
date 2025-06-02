@@ -17,8 +17,8 @@
 
 ¿Quieres eliminar tu cuenta?
 
-- 🇪🇸 [Instrucciones en español](./delete-account.md)
-- 🇬🇧 [Instructions in English](./delete-account-en.md)
+- 🇪🇸 [Instrucciones en español](/delete-account-es)
+- 🇬🇧 [Instructions in English](/delete-account-en)
 
 ---
 
