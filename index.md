@@ -1,7 +1,8 @@
 ---
-layout: default
-title: Home
+title: FocusTrack
 ---
+
+[🏠 Home](./) | [🗑️ Delete Account (EN)](delete-account-en) | [🗑️ Eliminar Cuenta (ES)](delete-account-es)
 
 # 🏠 Home — Welcome to **FocusTrack**
 
