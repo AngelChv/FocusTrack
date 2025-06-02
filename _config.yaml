@@ -1,2 +1,29 @@
 title: FocusTrack
+description: A minimalist app to track and manage your movies.
+author: Ángel Chicote
+email: chv.angel.01@gmail.com
+url: "https://angelchv.github.io"
+baseurl: "/FocusTrack"
+
 theme: minima
+
+# Opciones del tema minima
+minima:
+  social_links:
+    github: angelchv
+
+# Mostrar última modificación (en entradas, si las usas)
+show_excerpts: true
+
+# Configuración de Markdown y build
+markdown: kramdown
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Información para SEO
+seo:
+  type: Website
+  name: FocusTrack
