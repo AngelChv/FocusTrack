@@ -17,4 +17,4 @@ You can delete your FocusTrack account in the following ways:
    
 ---
 
-**Languages**: [Español](https://angelchv.github.io/FocusTrack/delete-account-es) | [English](https://angelchv.github.io/FocusTrack/delete-account-en)
+**Languages**: | [Español](https://angelchv.github.io/FocusTrack/delete-account-es) | [English](https://angelchv.github.io/FocusTrack/delete-account-en)
