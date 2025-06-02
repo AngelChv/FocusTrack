@@ -1,4 +1,4 @@
-# 🎬 FocusTrack
+# 🎬 Inicio
 
 **FocusTrack** es una aplicación minimalista para organizar y seguir las películas que has visto, quieres ver o que te gustan.
 
