@@ -1,50 +1,42 @@
 ---
 layout: default
-title: Inicio
+title: Home
 ---
 
-**FocusTrack** es una aplicación minimalista para organizar y seguir las películas que has visto, quieres ver o que te gustan.
+# 🏠 Home — Welcome to **FocusTrack**
 
-> Una experiencia centrada en el usuario, simple y accesible.
+FocusTrack is a clean, minimalist app designed to help you organize and track the movies you’ve watched, want to watch, or love.
 
----
-
-## 🌐 Idiomas / Languages
-
-- 🇪🇸 [Español](#focustrack-en-español)
-- 🇬🇧 [English](#focustrack-in-english)
+> A user-centered, simple, and accessible experience for movie lovers.
 
 ---
 
-## 🗑️ Eliminar cuenta / Delete Account
+## 🌐 Languages
 
-¿Quieres eliminar tu cuenta?
+Available now:
 
-- 🇪🇸 [Instrucciones en español](https://angelchv.github.io/FocusTrack/delete-account-es)
-- 🇬🇧 [Instructions in English](https://angelchv.github.io/FocusTrack/delete-account-en)
-
----
-
-## 📱 FocusTrack en Español
-
-FocusTrack es una app para:
-
-- ✅ Llevar el control de tus películas vistas y pendientes.
-- ✅ Crear listas personalizadas.
-- ✅ Guardar tus favoritas.
-- ✅ Recibir recomendaciones.
-- ✅ Usar múltiples temas e idiomas.
+- 🇬🇧 English (this page)
+- 🇪🇸 Español (coming soon) — [See Spanish content](https://angelchv.github.io/FocusTrack/#focustrack-en-español)
 
 ---
 
-## 📱 FocusTrack in English
+## 🗑️ Account Deletion
 
-FocusTrack is an app to:
+If you wish to delete your account, please follow the instructions below:
 
-- ✅ Keep track of watched and pending movies.
-- ✅ Create custom movie lists.
-- ✅ Save your favorites.
-- ✅ Get recommendations.
-- ✅ Enjoy multilingual themes and UI.
+- 🇬🇧 [Delete Account Instructions (English)](https://angelchv.github.io/FocusTrack/delete-account-en)
+- 🇪🇸 [Instrucciones para eliminar la cuenta (Español)](https://angelchv.github.io/FocusTrack/delete-account-es)
 
 ---
+
+## 🎬 What Can You Do With FocusTrack?
+
+- ✔️ Keep track of movies you’ve watched or want to watch
+- ✔️ Create and manage personalized movie lists
+- ✔️ Save your favorite titles for quick access
+- ✔️ Receive tailored movie recommendations
+- ✔️ Customize your experience with multiple themes and languages
+
+---
+
+Thank you for choosing FocusTrack — your companion for a better movie experience.
