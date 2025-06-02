@@ -2,6 +2,8 @@
 title: Eliminar cuenta
 ---
 
+[🏠 Home](./) | [🗑️ Delete Account (EN)](delete-account-en) | [🗑️ Eliminar Cuenta (ES)](delete-account-es)
+
 # Eliminar cuenta de FocusTrack
 
 Puedes eliminar tu cuenta de FocusTrack de las siguientes formas:
@@ -15,4 +17,4 @@ Puedes eliminar tu cuenta de FocusTrack de las siguientes formas:
 
 ---
 
-**Idiomas**: [Español](https://angelchv.github.io/FocusTrack/delete-account-es) | [English](https://angelchv.github.io/FocusTrack/delete-account-en)
+**Idiomas**: | [Español](https://angelchv.github.io/FocusTrack/delete-account-es) | [English](https://angelchv.github.io/FocusTrack/delete-account-en)
