@@ -5,6 +5,10 @@ plugins {
 
     alias(libs.plugins.googleServices)
     alias(libs.plugins.firebase.crashlytics)
+
+    alias(libs.plugins.hilt)
+    // Hilt needs kapt (Kotlin Annotation Processing Tool) to generate the code
+    kotlin("kapt")
 }
 
 android {
@@ -46,6 +50,10 @@ dependencies {
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.crashlytics)
+
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
