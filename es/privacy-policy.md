@@ -3,6 +3,10 @@ layout: default
 title: Política de Privacidad
 ---
 
+[🏠 Inicio](https://angelchv.github.io/FocusTrack/es/) | [🔒 Política de Privacidad](https://angelchv.github.io/FocusTrack/es/privacy-policy) | [🗑️ Eliminar Cuenta](https://angelchv.github.io/FocusTrack/es/delete-account)
+
+**🌍 Idiomas**: | [English](https://angelchv.github.io/FocusTrack/en/privacy-policy) | [Español](https://angelchv.github.io/FocusTrack/es/privacy-policy)
+
 # Política de Privacidad
 
 _Última actualización: 2 de junio de 2025_
