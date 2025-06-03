@@ -2,7 +2,7 @@
 title: FocusTrack
 ---
 
-[🏠 Home](./) | [🗑️ Delete Account (EN)](delete-account-en) | [🗑️ Eliminar Cuenta (ES)](delete-account-es)
+[🏠 Home](./) | [🗑️ Delete Account (EN)](delete-account-en) | [🗑️ Eliminar Cuenta (ES)](delete-account-es) | [🔒 Privacy Policy (EN)](./privacy-policy-en) | [🔒 Política de Privacidad (ES)](./privacy-policy-en)
 
 # 🏠 Home — Welcome to **FocusTrack**
 
