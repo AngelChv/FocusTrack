@@ -3,7 +3,6 @@ title: Eliminar cuenta
 ---
 
 [🏠 Inicio](https://angelchv.github.io/FocusTrack/es/) | [🔒 Política de Privacidad](https://angelchv.github.io/FocusTrack/es/privacy-policy) | [🗑️ Eliminar Cuenta](https://angelchv.github.io/FocusTrack/es/delete-account)
-
 **🌍 Idiomas**: | [English](https://angelchv.github.io/FocusTrack/en/delete-account) | [Español](https://angelchv.github.io/FocusTrack/es/delete-account)
 
 # Eliminar cuenta de FocusTrack
