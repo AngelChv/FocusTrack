@@ -2,7 +2,8 @@
 title: FocusTrack
 ---
 
-[🏠 Home](./) | [🗑️ Delete Account (EN)](delete-account-en) | [🗑️ Eliminar Cuenta (ES)](delete-account-es) | [🔒 Privacy Policy (EN)](./privacy-policy-en) | [🔒 Política de Privacidad (ES)](./privacy-policy-en)
+[🏠 Home](https://angelchv.github.io/FocusTrack/) | [🔒 Privacy Policy](https://angelchv.github.io/FocusTrack/privacy-policy-en) | [🗑️ Delete Account](https://angelchv.github.io/FocusTrack/delete-account-en)
+**🌍 Languages**: | [English](https://angelchv.github.io/FocusTrack/) | [Español](https://angelchv.github.io/FocusTrack/es/)
 
 # 🏠 Home — Welcome to **FocusTrack**
 
