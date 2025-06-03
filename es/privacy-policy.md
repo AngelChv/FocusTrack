@@ -48,8 +48,8 @@ Todos los datos se almacenan de forma segura utilizando los servicios de **Fireb
 
 Puedes solicitar la eliminación de tu cuenta desde la app o visitando una de las siguientes páginas:
 
-- 🇬🇧 [Delete Account Instructions (EN)](./delete-account-en)
-- 🇪🇸 [Instrucciones para eliminar cuenta (ES)](./delete-account-es)
+- 🇬🇧 [Delete Account Instructions (EN)](https://angelchv.github.io/FocusTrack/en/delete-account)
+- 🇪🇸 [Instrucciones para eliminar cuenta (ES)](https://angelchv.github.io/FocusTrack/es/delete-account)
 
 Todos los datos personales asociados a tu cuenta serán eliminados de forma permanente.
 
