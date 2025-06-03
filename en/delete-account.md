@@ -2,7 +2,9 @@
 title: Delete Account
 ---
 
-[🏠 Home](./) | [🗑️ Delete Account (EN)](delete-account-en) | [🗑️ Eliminar Cuenta (ES)](delete-account-es)
+[🏠 Home](https://angelchv.github.io/FocusTrack/) | [🔒 Privacy Policy](https://angelchv.github.io/FocusTrack/en/privacy-policy) | [🗑️ Delete Account](https://angelchv.github.io/FocusTrack/en/delete-account)  
+**🌍 Languages**: | [English](https://angelchv.github.io/FocusTrack/en/delete-account) | [Español](https://angelchv.github.io/FocusTrack/es/delete-account)
+
 
 # Delete Your FocusTrack Account
 
@@ -14,7 +16,3 @@ You can delete your FocusTrack account in the following ways:
    
    > The account deletion is immediate once confirmed in the app.  
    > Deleting your account will permanently remove your profile and all your personal lists stored on our servers.
-   
----
-
-**Languages**: | [Español](https://angelchv.github.io/FocusTrack/delete-account-es) | [English](https://angelchv.github.io/FocusTrack/delete-account-en)
