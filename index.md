@@ -1,7 +1,9 @@
 ---
-layout: default
-title: Home
+title: FocusTrack
 ---
+
+[🏠 Home](https://angelchv.github.io/FocusTrack/) | [🔒 Privacy Policy](https://angelchv.github.io/FocusTrack/en/privacy-policy) | [🗑️ Delete Account](https://angelchv.github.io/FocusTrack/en/delete-account)
+**🌍 Languages**: | [English](https://angelchv.github.io/FocusTrack/) | [Español](https://angelchv.github.io/FocusTrack/es/)
 
 # 🏠 Home — Welcome to **FocusTrack**
 
@@ -16,7 +18,7 @@ FocusTrack is a clean, minimalist app designed to help you organize and track th
 Available now:
 
 - 🇬🇧 English (this page)
-- 🇪🇸 Español (coming soon) — [See Spanish content](https://angelchv.github.io/FocusTrack/#focustrack-en-español)
+- 🇪🇸 Español — [See Spanish content](https://angelchv.github.io/FocusTrack/es/)
 
 ---
 
@@ -24,8 +26,8 @@ Available now:
 
 If you wish to delete your account, please follow the instructions below:
 
-- 🇬🇧 [Delete Account Instructions (English)](https://angelchv.github.io/FocusTrack/delete-account-en)
-- 🇪🇸 [Instrucciones para eliminar la cuenta (Español)](https://angelchv.github.io/FocusTrack/delete-account-es)
+- 🇬🇧 [Delete Account Instructions (English)](https://angelchv.github.io/FocusTrack/en/delete-account)
+- 🇪🇸 [Instrucciones para eliminar la cuenta (Español)](https://angelchv.github.io/FocusTrack/es/delete-account)
 
 ---
 
