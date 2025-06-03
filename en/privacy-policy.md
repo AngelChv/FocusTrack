@@ -3,6 +3,9 @@ layout: default
 title: Privacy Policy
 ---
 
+[🏠 Home](https://angelchv.github.io/FocusTrack/) | [🔒 Privacy Policy](https://angelchv.github.io/FocusTrack/en/privacy-policy) | [🗑️ Delete Account](https://angelchv.github.io/FocusTrack/en/delete-account)  
+**🌍 Languages**: | [English](https://angelchv.github.io/FocusTrack/en/privacy-policy) | [Español](https://angelchv.github.io/FocusTrack/es/privacy-policy)
+
 # Privacy Policy
 
 _Last updated: June 2, 2025_
@@ -44,8 +47,8 @@ All data is securely stored using **Firebase** services. Your data is associated
 
 You can request account deletion from the app or by visiting one of the following pages:
 
-- 🇬🇧 [Delete Account Instructions (EN)](./delete-account-en)
-- 🇪🇸 [Instrucciones para eliminar cuenta (ES)](./delete-account-es)
+- 🇬🇧 [Delete Account Instructions (EN)](https://angelchv.github.io/FocusTrack/en/delete-account)
+- 🇪🇸 [Instrucciones para eliminar cuenta (ES)](https://angelchv.github.io/FocusTrack/es/delete-account)
 
 All personal data associated with your account will be permanently deleted.
 
