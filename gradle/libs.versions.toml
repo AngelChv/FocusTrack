@@ -18,6 +18,9 @@ hiltNavigationCompose = "1.2.0"
 
 uiTextGoogleFonts = "1.7.8"
 
+navigationCompose = "2.8.0"
+kotlinxSerializationJson = "1.6.3"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -43,6 +46,8 @@ hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-com
 
 androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
 
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -53,3 +58,4 @@ googleServices = { id = "com.google.gms.google-services", version.ref = "service
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsPlugin" }
 
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+jetbrainsKotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

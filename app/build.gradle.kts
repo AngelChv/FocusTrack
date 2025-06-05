@@ -9,6 +9,8 @@ plugins {
     alias(libs.plugins.hilt)
     // Hilt needs kapt (Kotlin Annotation Processing Tool) to generate the code
     kotlin("kapt")
+
+    alias(libs.plugins.jetbrainsKotlinSerialization)
 }
 
 android {
@@ -56,6 +58,12 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
 
     implementation(libs.androidx.ui.text.google.fonts)
+
+    // Navigation Compose
+    implementation(libs.androidx.navigation.compose)
+
+    // JSON
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
