@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_invalid_credentials">Credenciales inválidas.</string>
+    <string name="error_invalid_email">El correo electrónico no es válido.</string>
+    <string name="error_wrong_password">La contraseña es incorrecta.</string>
+    <string name="error_user_not_found">No se encontró ningún usuario con esas credenciales.</string>
+    <string name="error_user_already_exists">Ya existe un usuario con ese correo electrónico.</string>
+    <string name="error_weak_password">La contraseña es demasiado débil.</string>
+    <string name="error_too_many_requests">Demasiados intentos fallidos. Inténtalo más tarde.</string>
+    <string name="error_network">No hay conexión a Internet.</string>
+    <string name="error_requires_recent_login">Debes iniciar sesión de nuevo para realizar esta acción.</string>
+    <string name="error_unknown">Ocurrió un error inesperado de autenticación.</string>
+</resources>
