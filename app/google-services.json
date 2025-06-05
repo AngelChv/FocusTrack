@@ -12,7 +12,20 @@
           "package_name": "io.github.angelchv.focustrack"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "759413289118-8ps0lln9vrq5c3bktrun85geaqbrnk7h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.angelchv.focustrack",
+            "certificate_hash": "e018bfb3ad8020f90eb951eee9d0717fde3dc86b"
+          }
+        },
+        {
+          "client_id": "759413289118-tsvnvofeisorvmi4luid1s3ggt51uebk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCvnC1vMGBPGUau9Kv6EF3ybRu3HjnX3hY"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759413289118-tsvnvofeisorvmi4luid1s3ggt51uebk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
