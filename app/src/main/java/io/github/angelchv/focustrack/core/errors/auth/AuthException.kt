@@ -71,5 +71,6 @@ fun Exception.toAuthException(): AuthException = when (this) {
     is FirebaseAuthRecentLoginRequiredException -> AuthException.RequiresRecentLoginException(this)
     is FirebaseTooManyRequestsException -> AuthException.TooManyRequestsException(this)
     is FirebaseNetworkException -> AuthException.NetworkException(this)
+    // TODO: raise a crashlytic error.
     else -> AuthException.UnknownAuthException(this)
 }
