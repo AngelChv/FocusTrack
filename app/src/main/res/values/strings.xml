@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name" translatable="false">FocusTrack</string>
+
+    <string name="login_title">Login</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="username_label">Username</string>
+    <string name="login_button">Login</string>
+    <string name="register_prompt">Don’t have an account? Register</string>
+    <string name="show_password">Show password</string>
+    <string name="hide_password">Hide password</string>
+
     <string name="error_invalid_credentials">Invalid credentials.</string>
     <string name="error_invalid_email">The email address is not valid.</string>
     <string name="error_wrong_password">Incorrect password.</string>

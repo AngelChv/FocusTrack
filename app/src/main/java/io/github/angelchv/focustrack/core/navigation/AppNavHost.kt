@@ -5,9 +5,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.composable
-import io.github.angelchv.focustrack.ui.screens.auth.LoginScreen
-import io.github.angelchv.focustrack.ui.screens.auth.RegisterScreen
+import io.github.angelchv.focustrack.ui.screens.auth.login.LoginScreen
+import io.github.angelchv.focustrack.ui.screens.auth.register.RegisterScreen
 import io.github.angelchv.focustrack.ui.screens.home.HomeScreen
+import io.github.angelchv.focustrack.ui.screens.splash.SplashScreen
 
 /**
  * Composable function responsible for setting up the navigation graph of the application.
@@ -23,11 +24,39 @@ import io.github.angelchv.focustrack.ui.screens.home.HomeScreen
 @Composable
 fun AppNavHost(
     navController: NavHostController = rememberNavController(),
-    startDestination: Route = Route.Home,
+    startDestination: Route = Route.Splash,
 ) {
     NavHost(navController, startDestination = startDestination) {
-        composable<Route.Login> { LoginScreen() }
+        composable<Route.Splash> {
+            SplashScreen(
+                onSessionRestored = {
+                    navController.navigateAndClear(Route.Home)
+                },
+                onNavigateToLogin = {
+                    navController.navigateAndClear(Route.Login)
+                },
+            )
+        }
+
+        composable<Route.Login> {
+            LoginScreen(
+                onLoginSuccess = {
+                    navController.navigate(Route.Home) {
+                        popUpTo(Route.Login) { inclusive = true }
+                    }
+                },
+                onNavigateToRegister = { navController.navigate(Route.Register) },
+            )
+        }
         composable<Route.Register> { RegisterScreen() }
+
         composable<Route.Home> { HomeScreen() }
     }
+}
+
+fun NavHostController.navigateAndClear(route: Route) = navigate(route) {
+    popUpTo(graph.startDestinationId) {
+        inclusive = true
+    }
+    graph.setStartDestination(route)
 }

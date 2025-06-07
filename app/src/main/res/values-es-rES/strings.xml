@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="login_title">Inicio de Sesión</string>
+    <string name="email_label">Correo electrónico</string>
+    <string name="password_label">Contraseña</string>
+    <string name="username_label">Nombre de usuario</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="register_prompt">¿No tienes cuenta? Registrarse</string>
+    <string name="show_password">Mostrar contraseña</string>
+    <string name="hide_password">Ocultar contraseña</string>
+
     <string name="error_invalid_credentials">Credenciales inválidas.</string>
     <string name="error_invalid_email">El correo electrónico no es válido.</string>
     <string name="error_wrong_password">La contraseña es incorrecta.</string>
