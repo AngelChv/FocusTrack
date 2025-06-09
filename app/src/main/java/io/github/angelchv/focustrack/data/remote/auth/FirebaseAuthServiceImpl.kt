@@ -1,5 +1,7 @@
 package io.github.angelchv.focustrack.data.remote.auth
 
+import android.util.Log
+import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import io.github.angelchv.focustrack.core.errors.auth.AuthException
@@ -26,6 +28,16 @@ class FirebaseAuthServiceImpl @Inject constructor() : AuthService {
         try {
             return auth.signInWithEmailAndPassword(email, password).await().user?.toDomainUser()
         } catch (e: Exception) {
+            throw e.toAuthException()
+        }
+    }
+
+    override suspend fun loginWhitCredential(credential: AuthCredential): User? {
+        try {
+            return auth.signInWithCredential(credential).await().user?.toDomainUser()
+        } catch (e: Exception) {
+            Log.e("LoginViewModel", "Google sign in failed", e)
+            // Todo: add the new exceptions
             throw e.toAuthException()
         }
     }

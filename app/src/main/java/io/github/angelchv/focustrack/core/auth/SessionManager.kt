@@ -1,4 +1,4 @@
-package io.github.angelchv.focustrack.core.session
+package io.github.angelchv.focustrack.core.auth
 
 import io.github.angelchv.focustrack.domain.model.User
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -68,6 +68,12 @@ dependencies {
     // Auth
     implementation(libs.firebase.auth)
 
+    // Android Credentials
+    implementation(libs.androidx.credentials)
+    implementation(libs.credentials.play.services.auth)
+
+    implementation(libs.googleid)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

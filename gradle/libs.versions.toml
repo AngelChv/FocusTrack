@@ -21,6 +21,10 @@ uiTextGoogleFonts = "1.7.8"
 navigationCompose = "2.8.0"
 kotlinxSerializationJson = "1.6.3"
 
+credentials = "1.5.0"
+
+googleid = "1.1.1"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -50,6 +54,11 @@ androidx-navigation-compose = { module = "androidx.navigation:navigation-compose
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 
 firebase-auth = { module = "com.google.firebase:firebase-auth-ktx" }
+
+androidx-credentials = { module = "androidx.credentials:credentials", version.ref = "credentials" }
+credentials-play-services-auth    = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "credentials" }
+
+googleid = {module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleid"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

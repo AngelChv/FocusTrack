@@ -1,5 +1,6 @@
 package io.github.angelchv.focustrack.data.repository
 
+import com.google.firebase.auth.AuthCredential
 import io.github.angelchv.focustrack.core.errors.auth.AuthException
 import io.github.angelchv.focustrack.data.remote.auth.AuthService
 import io.github.angelchv.focustrack.domain.model.User
@@ -12,7 +13,7 @@ import kotlin.Result
  * @param authService Service for authentication tasks.
  */
 class AuthRepository @Inject constructor(
-    private val authService: AuthService
+    private val authService: AuthService,
 ) {
     /**
      * Logs in a user.
@@ -24,6 +25,18 @@ class AuthRepository @Inject constructor(
     suspend fun loginUser(email: String, password: String): Result<User> {
         return try {
             val user = authService.login(email, password)
+            if (user != null) Result.success(user)
+            else Result.failure(AuthException.UnknownAuthException())
+        } catch (e: AuthException) {
+            Result.failure(e)
+        } catch (e: Exception) {
+            Result.failure(AuthException.UnknownAuthException(e))
+        }
+    }
+
+    suspend fun loginWithCredential(credential: AuthCredential): Result<User> {
+        return try {
+            val user = authService.loginWhitCredential(credential)
             if (user != null) Result.success(user)
             else Result.failure(AuthException.UnknownAuthException())
         } catch (e: AuthException) {

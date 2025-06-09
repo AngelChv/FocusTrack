@@ -9,6 +9,7 @@
     <string name="register_prompt">Don’t have an account? Register</string>
     <string name="show_password">Show password</string>
     <string name="hide_password">Hide password</string>
+    <string name="google_sign_in">Sign in with Google</string>
 
     <string name="error_invalid_credentials">Invalid credentials.</string>
     <string name="error_invalid_email">The email address is not valid.</string>

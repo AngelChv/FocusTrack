@@ -1,5 +1,6 @@
 package io.github.angelchv.focustrack.data.remote.auth
 
+import com.google.firebase.auth.AuthCredential
 import io.github.angelchv.focustrack.domain.model.User
 
 /**
@@ -18,6 +19,8 @@ interface AuthService {
      * @return The [User] object if login is successful, `null` otherwise.
      */
     suspend fun login(email: String, password: String): User?
+
+    suspend fun loginWhitCredential(credential: AuthCredential): User?
 
     /**
      * Attempts to register a new user with the provided credentials.

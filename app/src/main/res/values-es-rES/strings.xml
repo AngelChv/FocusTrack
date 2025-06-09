@@ -8,6 +8,7 @@
     <string name="register_prompt">¿No tienes cuenta? Registrarse</string>
     <string name="show_password">Mostrar contraseña</string>
     <string name="hide_password">Ocultar contraseña</string>
+    <string name="google_sign_in">Acceder con Google</string>
 
     <string name="error_invalid_credentials">Credenciales inválidas.</string>
     <string name="error_invalid_email">El correo electrónico no es válido.</string>

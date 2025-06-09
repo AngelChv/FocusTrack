@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.angelchv.focustrack.core.session.SessionManager
+import io.github.angelchv.focustrack.core.auth.SessionManager
 import io.github.angelchv.focustrack.data.repository.AuthRepository
 import javax.inject.Inject
 

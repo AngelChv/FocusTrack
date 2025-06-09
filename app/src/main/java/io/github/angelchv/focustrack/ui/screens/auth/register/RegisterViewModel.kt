@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.angelchv.focustrack.core.session.SessionManager
+import io.github.angelchv.focustrack.core.auth.SessionManager
 import io.github.angelchv.focustrack.data.repository.AuthRepository
 import kotlinx.coroutines.launch
 import javax.inject.Inject
