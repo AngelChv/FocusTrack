@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">FocusTrack</string>
 
+    <!-- Login -->
     <string name="login_title">Login</string>
     <string name="email_label">Email</string>
     <string name="password_label">Password</string>
@@ -11,6 +12,13 @@
     <string name="hide_password">Hide password</string>
     <string name="google_sign_in">Sign in with Google</string>
 
+    <!-- Register -->
+    <string name="register_title">Register</string>
+    <string name="confirm_password_label">Confirm password</string>
+    <string name="register_button">Sign up</string>
+    <string name="already_have_account">Already have an account? Sign in</string>
+
+    <!-- Errors -->
     <string name="error_invalid_credentials">Invalid credentials.</string>
     <string name="error_invalid_email">The email address is not valid.</string>
     <string name="error_wrong_password">Incorrect password.</string>

@@ -1,9 +1,9 @@
 package io.github.angelchv.focustrack.core.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.composable
 import io.github.angelchv.focustrack.ui.screens.auth.login.LoginScreen
 import io.github.angelchv.focustrack.ui.screens.auth.register.RegisterScreen
@@ -23,10 +23,14 @@ import io.github.angelchv.focustrack.ui.screens.splash.SplashScreen
  */
 @Composable
 fun AppNavHost(
-    navController: NavHostController = rememberNavController(),
+    modifier: Modifier = Modifier,
+    navController: NavHostController,
     startDestination: Route = Route.Splash,
 ) {
-    NavHost(navController, startDestination = startDestination) {
+    NavHost(
+        navController, startDestination = startDestination,
+        modifier = modifier,
+    ) {
         composable<Route.Splash> {
             SplashScreen(
                 onSessionRestored = {
@@ -41,14 +45,19 @@ fun AppNavHost(
         composable<Route.Login> {
             LoginScreen(
                 onLoginSuccess = {
-                    navController.navigate(Route.Home) {
-                        popUpTo(Route.Login) { inclusive = true }
-                    }
+                    navController.navigateAndClear(Route.Home)
                 },
                 onNavigateToRegister = { navController.navigate(Route.Register) },
             )
         }
-        composable<Route.Register> { RegisterScreen() }
+        composable<Route.Register> {
+            RegisterScreen(
+                onRegisterSuccess = {
+                    navController.navigateAndClear(Route.Home)
+                },
+                onNavBack = navController::popBackStack,
+            )
+        }
 
         composable<Route.Home> { HomeScreen() }
     }

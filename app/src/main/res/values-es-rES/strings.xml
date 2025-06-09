@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Inicio de Sesión -->
     <string name="login_title">Inicio de Sesión</string>
     <string name="email_label">Correo electrónico</string>
     <string name="password_label">Contraseña</string>
@@ -10,6 +11,13 @@
     <string name="hide_password">Ocultar contraseña</string>
     <string name="google_sign_in">Acceder con Google</string>
 
+    <!-- Registro -->
+    <string name="register_title">Registro</string>
+    <string name="confirm_password_label">Confirmar contraseña</string>
+    <string name="register_button">Registrarse</string>
+    <string name="already_have_account">¿Ya tienes una cuenta? Inicia sesión</string>
+
+    <!-- Errores -->
     <string name="error_invalid_credentials">Credenciales inválidas.</string>
     <string name="error_invalid_email">El correo electrónico no es válido.</string>
     <string name="error_wrong_password">La contraseña es incorrecta.</string>

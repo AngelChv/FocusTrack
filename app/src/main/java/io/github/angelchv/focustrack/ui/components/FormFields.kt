@@ -43,6 +43,7 @@ fun EmailField(value: String, onValueChange: (String) -> Unit) {
 @Composable
 fun PasswordField(
     value: String, isHidingPassword: Boolean,
+    label: String = stringResource(R.string.password_label),
     onToggleHidePassword: () -> Unit,
     onValueChange: (String) -> Unit,
 ) {
@@ -71,7 +72,7 @@ fun PasswordField(
         onValueChange = onValueChange,
         singleLine = true,
         maxLines = 1,
-        label = { Text(stringResource(R.string.password_label)) },
+        label = { Text(label) },
         trailingIcon = { leadingIcon() },
         visualTransformation = visualTransformation,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)

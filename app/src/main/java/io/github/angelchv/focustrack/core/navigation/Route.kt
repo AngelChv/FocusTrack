@@ -14,4 +14,12 @@ sealed interface Route {
 
     @Serializable
     object Home : Route
+
+    companion object {
+        val all = listOf(Splash, Login, Register, Home)
+        fun fromFullRouteString(route: String?): Route? {
+            val name = route?.substringAfterLast('.')?.substringBefore('?')
+            return all.firstOrNull { it.javaClass.simpleName == name }
+        }
+    }
 }

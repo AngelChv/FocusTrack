@@ -32,12 +32,16 @@ class LoginViewModel @Inject constructor(
 
     fun onEmailChanged(email: String) {
         uiState =
-            uiState.copy(email = email, isLoginEnabled = validateForm(email, uiState.password))
+            uiState.copy(
+                email = email, isLoginEnabled = validateForm(email, uiState.password),
+                errorMessageId = null,
+            )
     }
 
     fun onPasswordChanged(password: String) {
         uiState = uiState.copy(
-            password = password, isLoginEnabled = validateForm(uiState.email, password)
+            password = password, isLoginEnabled = validateForm(uiState.email, password),
+            errorMessageId = null,
         )
     }
 
@@ -51,6 +55,7 @@ class LoginViewModel @Inject constructor(
 
     fun login(activity: Activity, onSuccess: () -> Unit) {
         viewModelScope.launch {
+            uiState = uiState.copy(errorMessageId = null)
             uiState = uiState.copy(isLoading = true)
             val result = authRepository.loginUser(uiState.email, uiState.password)
 
@@ -71,6 +76,7 @@ class LoginViewModel @Inject constructor(
 
     fun attemptCredentialSignIn(activity: Activity) {
         viewModelScope.launch {
+            uiState = uiState.copy(errorMessageId = null)
             uiState = uiState.copy(isLoading = true)
             val credential = credentialManager.getCredential(activity)
 
