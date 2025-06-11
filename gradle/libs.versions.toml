@@ -25,6 +25,8 @@ credentials = "1.5.0"
 
 googleid = "1.1.1"
 
+coil = "2.4.0"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -59,6 +61,8 @@ androidx-credentials = { module = "androidx.credentials:credentials", version.re
 credentials-play-services-auth    = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "credentials" }
 
 googleid = {module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleid"}
+
+coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -9,12 +9,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import io.github.angelchv.focustrack.data.remote.auth.FirebaseAuthServiceImpl
-import io.github.angelchv.focustrack.data.repository.AuthRepository
 import io.github.angelchv.focustrack.ui.theme.FocusTrackTheme
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onNavigateToMovieDetail: () -> Unit,
+) {
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)) {
             Greeting(
@@ -22,8 +22,8 @@ fun HomeScreen() {
             )
 
             // TODO: REMOVE
-            Button(onClick = { AuthRepository(FirebaseAuthServiceImpl()).logoutUser() }) {
-                Text("Logout")
+            Button(onClick = onNavigateToMovieDetail) {
+                Text("Go to Movie Detail")
             }
         }
     }

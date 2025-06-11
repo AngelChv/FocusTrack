@@ -18,22 +18,27 @@ import io.github.angelchv.focustrack.ui.theme.FocusTrackTheme
 
 @Composable
 fun FocusTrackScaffold(
+    currentFlow: Route?,
     currentRoute: Route?,
+    onFlowSelected: (Route) -> Unit = {},
     content: @Composable BoxScope.() -> Unit,
 ) {
     Scaffold(
-        modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.surfaceBright),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.surfaceBright),
         topBar = {
-            when (currentRoute) {
-                Route.Login, Route.Register -> FocusTrackTopAppBar()
-                else -> {}
-            }
+            if (currentFlow == Route.Splash && currentRoute != Route.Splash) FocusTrackTopAppBar()
+            else if (currentFlow == Route.Home) HomeTopAppBar()
+            else if (currentRoute == Route.Profile) ProfileTopAppBar()
         },
         bottomBar = {
-            when (currentRoute) {
-                Route.Login, Route.Register -> BottomAppBar { BottomChvDesign() }
-                else -> {}
-            }
+            if (currentFlow == Route.Splash && currentRoute != Route.Splash) {
+                BottomAppBar { BottomChvDesign() }
+            } else if (Route.mainFlows.contains(currentFlow)) FocusTrackNavBar(
+                currentFlow,
+                onFlowSelected = onFlowSelected,
+            )
         },
     ) { paddingValues: PaddingValues ->
         Box(
@@ -50,6 +55,6 @@ fun FocusTrackScaffold(
 @Composable
 fun FocusTrackScaffoldPreview() {
     FocusTrackTheme {
-        FocusTrackScaffold(Route.Login) {}
+        FocusTrackScaffold(Route.Profile, Route.Profile) {}
     }
 }

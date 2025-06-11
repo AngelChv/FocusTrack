@@ -137,16 +137,6 @@ fun Register(
 @Composable
 fun LoginPreview() {
     FocusTrackTheme {
-        FocusTrackScaffold(Route.Register) {
-            Register(
-                modifier = Modifier.align(Alignment.Center),
-                state = RegisterUiState(
-                    email = "angel@gmail.com",
-                    password = "12345",
-                    isLoading = false,
-                    errorMessageId = R.string.error_unknown,
-                ),
-            )
-        }
+        FocusTrackScaffold(Route.Register, Route.Register) {}
     }
 }

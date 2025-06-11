@@ -18,6 +18,20 @@
     <string name="register_button">Sign up</string>
     <string name="already_have_account">Already have an account? Sign in</string>
 
+    <!-- Screens -->
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="lists">Lists</string>
+    <string name="profile">Profile</string>
+
+    <!-- Actions -->
+    <string name="edit_profile">Edit Profile</string>
+    <string name="settings">Settings</string>
+
+    <!-- Profile -->
+    <string name="profile_photo">Profile photo</string>
+    <string name="no_profile_photo">No profile photo</string>
+
     <!-- Errors -->
     <string name="error_invalid_credentials">Invalid credentials.</string>
     <string name="error_invalid_email">The email address is not valid.</string>

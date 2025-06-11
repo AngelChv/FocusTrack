@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -29,7 +28,6 @@ import io.github.angelchv.focustrack.ui.components.GoogleSignInButton
 import io.github.angelchv.focustrack.ui.components.PasswordField
 import io.github.angelchv.focustrack.ui.theme.FocusTrackTheme
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
     onLoginSuccess: () -> Unit,
@@ -138,16 +136,6 @@ fun Login(
 @Composable
 fun LoginPreview() {
     FocusTrackTheme {
-        FocusTrackScaffold(Route.Login) {
-            Login(
-                modifier = Modifier.align(Alignment.Center),
-                state = LoginUiState(
-                    email = "angel@gmail.com",
-                    password = "12345",
-                    isLoading = false,
-                    errorMessageId = R.string.error_unknown,
-                ),
-            )
-        }
+        FocusTrackScaffold(Route.Login, Route.Login) {}
     }
 }

@@ -17,6 +17,20 @@
     <string name="register_button">Registrarse</string>
     <string name="already_have_account">¿Ya tienes una cuenta? Inicia sesión</string>
 
+    <!-- Screens -->
+    <string name="home">Inicio</string>
+    <string name="search">Búsqueda</string>
+    <string name="lists">Listas</string>
+    <string name="profile">Perfil</string>
+
+    <!-- Perfil -->
+    <string name="profile_photo">Foto de perfil</string>
+    <string name="no_profile_photo">No hay foto de perfil</string>
+
+    <!-- Actions -->
+    <string name="edit_profile">Editar perfil</string>
+    <string name="settings">Ajustes</string>
+
     <!-- Errores -->
     <string name="error_invalid_credentials">Credenciales inválidas.</string>
     <string name="error_invalid_email">El correo electrónico no es válido.</string>

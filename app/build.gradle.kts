@@ -74,6 +74,9 @@ dependencies {
 
     implementation(libs.googleid)
 
+    // Coil
+    implementation(libs.coil)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
