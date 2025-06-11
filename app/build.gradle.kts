@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -13,7 +16,24 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinSerialization)
 }
 
+// Función para cargar la propiedad desde local.properties
+fun getLocalProperty(key: String): String {
+    val properties = Properties()
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        properties.load(FileInputStream(localPropertiesFile))
+        return properties.getProperty(key, "")
+    }
+    return ""
+}
+
 android {
+    // Production:
+    //val tmdbAccessToken: String = project.findProperty("TMDB_ACCESS_TOKEN") as String? ?: ""
+
+    // Dev:
+    val tmdbAccessToken: String = getLocalProperty("TMDB_ACCESS_TOKEN")
+
     namespace = "io.github.angelchv.focustrack"
     compileSdk = 35
 
@@ -25,10 +45,15 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "TMDB_ACCESS_TOKEN", "\"$tmdbAccessToken\"")
     }
 
     buildTypes {
         release {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -44,6 +69,7 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
 }
@@ -76,6 +102,13 @@ dependencies {
 
     // Coil
     implementation(libs.coil)
+
+    // Retrofit
+    implementation(libs.retrofit2)
+    implementation(libs.retrofit2.converter.gson)
+
+    // OkHttp
+    implementation(libs.okHttp)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

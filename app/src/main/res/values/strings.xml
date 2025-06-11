@@ -31,6 +31,9 @@
     <!-- Profile -->
     <string name="profile_photo">Profile photo</string>
     <string name="no_profile_photo">No profile photo</string>
+    
+    <!-- Movie -->
+    <string name="movie_poster">Movie poster</string>
 
     <!-- Errors -->
     <string name="error_invalid_credentials">Invalid credentials.</string>

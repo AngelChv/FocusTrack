@@ -1,5 +1,7 @@
 package io.github.angelchv.focustrack.core.navigation
 
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -8,10 +10,12 @@ import androidx.navigation.compose.composable
 import io.github.angelchv.focustrack.ui.screens.home.HomeScreen
 import io.github.angelchv.focustrack.ui.screens.movieDetail.MovieDetailScreen
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController,
+    scrollBehavior: TopAppBarScrollBehavior,
     startDestination: Route = Route.Home,
 ) {
     NavHost(
@@ -19,9 +23,11 @@ fun HomeNavHost(
         modifier = modifier,
     ) {
         composable<Route.Home> {
-            HomeScreen(onNavigateToMovieDetail = {
-                navController.navigate(Route.MovieDetail)
-            })
+            HomeScreen(
+                scrollBehavior = scrollBehavior,
+                onNavigateToMovieDetail = {
+                    navController.navigate(Route.MovieDetail)
+                })
         }
         composable<Route.MovieDetail> { MovieDetailScreen() }
     }

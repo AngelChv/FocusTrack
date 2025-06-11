@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -27,6 +28,7 @@ import io.github.angelchv.focustrack.ui.theme.FocusTrackTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -64,6 +66,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
 
+
             FocusTrackTheme {
                 FocusTrackScaffold(
                     currentFlow,
@@ -77,7 +80,7 @@ class MainActivity : ComponentActivity() {
                         } else {
                             viewModel.setCurrentFlow(selected)
                         }
-                    }) {
+                    }) { scrollBehavior ->
                     when (currentFlow) {
                         Route.Splash -> AuthNavHost(
                             Modifier.align(
@@ -88,10 +91,15 @@ class MainActivity : ComponentActivity() {
                             }
                         )
 
-                        Route.Home -> HomeNavHost(Modifier.align(Alignment.Center), navController)
+                        Route.Home -> HomeNavHost(
+                            Modifier.align(Alignment.Center),
+                            navController,
+                            scrollBehavior,
+                        )
+
                         Route.Search -> SearchNavHost(
                             Modifier.align(Alignment.Center),
-                            navController
+                            navController,
                         )
 
                         Route.Lists -> ListNavHost(navController = navController)

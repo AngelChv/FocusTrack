@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -20,10 +21,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import io.github.angelchv.focustrack.R
-import io.github.angelchv.focustrack.core.navigation.Route
 import io.github.angelchv.focustrack.ui.components.EmailField
 import io.github.angelchv.focustrack.ui.components.EnableButton
-import io.github.angelchv.focustrack.ui.components.FocusTrackScaffold
 import io.github.angelchv.focustrack.ui.components.PasswordField
 import io.github.angelchv.focustrack.ui.theme.FocusTrackTheme
 
@@ -133,10 +132,11 @@ fun Register(
     }
 }
 
-@Preview(showSystemUi = true)
+@OptIn(ExperimentalMaterial3Api::class)
+@Preview(showBackground = true)
 @Composable
 fun LoginPreview() {
     FocusTrackTheme {
-        FocusTrackScaffold(Route.Register, Route.Register) {}
+        Register(state = RegisterUiState())
     }
 }
