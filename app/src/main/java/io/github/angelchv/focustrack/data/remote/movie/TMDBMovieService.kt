@@ -2,6 +2,7 @@ package io.github.angelchv.focustrack.data.remote.movie
 
 import io.github.angelchv.focustrack.data.remote.tmdb.TMDBApi
 import io.github.angelchv.focustrack.domain.model.Movie
+import io.github.angelchv.focustrack.domain.model.MovieDetail
 import javax.inject.Inject
 
 class TMDBMovieService @Inject constructor(
@@ -25,5 +26,9 @@ class TMDBMovieService @Inject constructor(
 
     override suspend fun getUpcomingMovies(): List<Movie> {
         return api.getUpcomingMovies().results.map { it.toDomainMovie() }
+    }
+
+    override suspend fun getMovieDetailsById(movieId: Int): MovieDetail {
+        return api.getMovieDetailsById(movieId).toDomain()
     }
 }

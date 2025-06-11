@@ -1,5 +1,6 @@
 package io.github.angelchv.focustrack.ui.screens.home
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -33,7 +34,7 @@ import io.github.angelchv.focustrack.ui.theme.FocusTrackTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    onNavigateToMovieDetail: () -> Unit,
+    onNavigateToMovieDetail: (movieId: Int) -> Unit,
     scrollBehavior: TopAppBarScrollBehavior,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
@@ -51,7 +52,7 @@ fun HomeScreen(
 fun Home(
     state: HomeUiState,
     scrollBehavior: TopAppBarScrollBehavior,
-    onNavigateToMovieDetail: () -> Unit,
+    onNavigateToMovieDetail: (movieId: Int) -> Unit,
 ) {
     LazyColumn(
         modifier = Modifier
@@ -66,7 +67,7 @@ fun Home(
                     title = "Tendencias",
                     movies = trendingMovies,
                     // Todo: send movieId to detail
-                    onMovieClick = { movie -> onNavigateToMovieDetail() }
+                    onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
                 )
             }
         }
@@ -77,7 +78,7 @@ fun Home(
                     title = "Populares",
                     movies = popularMovies,
                     // Todo: send movieId to detail
-                    onMovieClick = { movie -> onNavigateToMovieDetail() }
+                    onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
                 )
             }
         }
@@ -88,7 +89,7 @@ fun Home(
                     title = "Mejor Valoradas",
                     movies = topRatedMovies,
                     // Todo: send movieId to detail
-                    onMovieClick = { movie -> onNavigateToMovieDetail() }
+                    onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
                 )
             }
         }
@@ -99,7 +100,7 @@ fun Home(
                     title = "En Cines",
                     movies = nowPlayingMovies,
                     // Todo: send movieId to detail
-                    onMovieClick = { movie -> onNavigateToMovieDetail() }
+                    onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
                 )
             }
         }
@@ -110,7 +111,7 @@ fun Home(
                     title = "Por Estrenar",
                     movies = upcomingMovies,
                     // Todo: send movieId to detail
-                    onMovieClick = { movie -> onNavigateToMovieDetail() }
+                    onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
                 )
             }
         }
@@ -120,7 +121,7 @@ fun Home(
 @Composable
 fun MovieSection(
     title: String, movies: List<Movie>,
-    onMovieClick: (Movie) -> Unit,
+    onMovieClick: (movieId: Int) -> Unit,
 ) {
     Column(modifier = Modifier.fillMaxWidth()) {
         Row(
@@ -153,7 +154,10 @@ fun MovieSection(
                     modifier = Modifier
                         .width(120.dp)
                         .aspectRatio(2 / 3f),
-                    onClick = { onMovieClick(movies[index]) },
+                    onClick = {
+                        Log.d("Home", "Clicked on movie ${movies[index].title}")
+                        onMovieClick(movies[index].id)
+                    },
                 )
             }
         }

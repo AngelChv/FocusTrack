@@ -8,7 +8,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import coil.compose.AsyncImage
 import io.github.angelchv.focustrack.R
-import io.github.angelchv.focustrack.data.remote.tmdb.TMDBApi.Companion.IMAGE_BASE_URL
+import io.github.angelchv.focustrack.data.remote.tmdb.TMDBApi
 import io.github.angelchv.focustrack.data.remote.tmdb.TMDBApi.Companion.ImageSize
 import io.github.angelchv.focustrack.domain.model.Movie
 
@@ -23,7 +23,7 @@ fun MovieCard(
         onClick = { onClick(movie) },
     ) {
         AsyncImage(
-            model = "$IMAGE_BASE_URL/${size.value}${movie.posterPath}",
+            model = TMDBApi.getImageUrl(movie.posterPath.toString(), size),
             contentDescription = stringResource(R.string.movie_poster),
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()

@@ -1,5 +1,6 @@
 package io.github.angelchv.focustrack.data.remote.tmdb
 
+import io.github.angelchv.focustrack.domain.dto.TMDBMovieDetailDto
 import io.github.angelchv.focustrack.domain.dto.TMDBMoviesResponseDto
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -16,6 +17,10 @@ interface TMDBApi {
             W500("w500"),
             W780("w780"),
             ORIGINAL("original")
+        }
+
+        fun getImageUrl(path: String, size: ImageSize): String {
+            return "$IMAGE_BASE_URL/${size.value}$path"
         }
     }
 
@@ -44,4 +49,10 @@ interface TMDBApi {
     suspend fun getUpcomingMovies(
         @Query("language") language: String = "en-US",
     ): TMDBMoviesResponseDto
+
+    @GET("movie/{movie_id}")
+    suspend fun getMovieDetailsById(
+        @Path("movie_id") movieId: Int,
+        @Query("language") language: String = "en-US",
+    ): TMDBMovieDetailDto
 }

@@ -16,7 +16,7 @@ data class TMDBMovieDto(
     @SerializedName("backdrop_path") val backdropPath: String?,
     val adult: Boolean,
     @SerializedName("original_language") val originalLanguage: String,
-    @SerializedName("genre_ids") val genreIds: List<Int>,
+    @SerializedName("genre_ids") val genreIds: List<Int>?,
     val popularity: Double,
     @SerializedName("release_date") val releaseDate: String?,
     @SerializedName("vote_average") val voteAverage: Double,
@@ -37,3 +37,4 @@ data class TMDBMovieDto(
         voteCount = voteCount,
     )
 }
+

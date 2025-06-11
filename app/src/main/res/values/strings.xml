@@ -35,6 +35,23 @@
     <!-- Movie -->
     <string name="movie_poster">Movie poster</string>
 
+    <!-- Generic -->
+    <string name="loading">Loading…</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- Movie Detail -->
+    <string name="movie_not_loaded">Movie could not be loaded</string>
+    <string name="overview">Overview</string>
+    <string name="spoken_languages">Spoken languages</string>
+    <string name="unknown_language">Unknown</string>
+    <string name="status">Status</string>
+    <string name="adult">Adult</string>
+    <string name="budget">Budget</string>
+    <string name="revenue">Revenue</string>
+    <string name="unknown_runtime">Unknown duration</string>
+    <string name="official_website">Official website</string>
+
     <!-- Errors -->
     <string name="error_invalid_credentials">Invalid credentials.</string>
     <string name="error_invalid_email">The email address is not valid.</string>

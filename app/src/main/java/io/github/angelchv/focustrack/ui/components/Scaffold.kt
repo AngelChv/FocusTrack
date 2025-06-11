@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FabPosition
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
@@ -32,18 +33,23 @@ fun FocusTrackScaffold(
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.surfaceBright),
         topBar = {
-            if (currentFlow == Route.Splash && currentRoute != Route.Splash) FocusTrackTopAppBar()
-            else if (currentFlow == Route.Home) HomeTopAppBar(scrollBehavior)
-            else if (currentRoute == Route.Profile) ProfileTopAppBar()
+            if (currentFlow is Route.Splash && currentRoute !is Route.Splash) FocusTrackTopAppBar()
+            else if (currentRoute is Route.Home) HomeTopAppBar(scrollBehavior)
+            else if (currentRoute is Route.Profile) ProfileTopAppBar()
         },
         bottomBar = {
-            if (currentFlow == Route.Splash && currentRoute != Route.Splash) {
+            if (currentRoute is Route.MovieDetail) MovieDetailBottomAppBar()
+            else if (currentFlow is Route.Splash && currentRoute !is Route.Splash) {
                 BottomAppBar { BottomChvDesign() }
             } else if (Route.mainFlows.contains(currentFlow)) FocusTrackNavBar(
                 currentFlow,
                 onFlowSelected = onFlowSelected,
             )
         },
+        floatingActionButtonPosition = FabPosition.EndOverlay,
+        floatingActionButton = {
+            if (currentRoute is Route.MovieDetail) AddToListFab()
+        }
     ) { paddingValues: PaddingValues ->
         Box(
             Modifier

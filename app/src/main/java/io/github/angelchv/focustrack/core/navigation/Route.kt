@@ -28,22 +28,29 @@ sealed interface Route {
 
     // Details
     @Serializable
-    object MovieDetail : Route
+    data class MovieDetail(val movieId: Int? = null) : Route
 
     @Serializable
     object ListDetail : Route
 
     companion object {
-        val all = listOf(
-            Splash, Login, Register, Home, Search,
-            Lists, Profile, MovieDetail, ListDetail,
-        )
-
         val mainFlows = listOf(Home, Search, Lists, Profile)
 
         fun fromFullRouteString(route: String?): Route? {
-            val name = route?.substringAfterLast('.')?.substringBefore('?')
-            return all.firstOrNull { it.javaClass.simpleName == name }
+            val name = route?.substringAfterLast('.')?.substringBefore('/')?.substringBefore('?')
+
+            return when (name) {
+                Splash::class.simpleName -> Splash
+                Login::class.simpleName -> Login
+                Register::class.simpleName -> Register
+                Home::class.simpleName -> Home
+                Search::class.simpleName -> Search
+                Lists::class.simpleName -> Lists
+                Profile::class.simpleName -> Profile
+                ListDetail::class.simpleName -> ListDetail
+                MovieDetail::class.simpleName -> MovieDetail()
+                else -> null
+            }
         }
     }
 }

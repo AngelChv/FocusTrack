@@ -8,7 +8,7 @@ data class Movie(
     val backdropPath: String?,
     val adult: Boolean,
     val originalLanguage: String,
-    val genreIds: List<Int>,
+    val genreIds: List<Int>?,
     val popularity: Double,
     val releaseDate: String?,
     val voteAverage: Double,

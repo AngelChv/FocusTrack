@@ -23,6 +23,10 @@
     <string name="lists">Listas</string>
     <string name="profile">Perfil</string>
 
+    <!-- Actions -->
+    <string name="edit_profile">Editar perfil</string>
+    <string name="settings">Ajustes</string>
+
     <!-- Perfil -->
     <string name="profile_photo">Foto de perfil</string>
     <string name="no_profile_photo">No hay foto de perfil</string>
@@ -30,9 +34,22 @@
     <!-- Película -->
     <string name="movie_poster">Poster de la película</string>
 
-    <!-- Actions -->
-    <string name="edit_profile">Editar perfil</string>
-    <string name="settings">Ajustes</string>
+    <!-- Genéricos -->
+    <string name="loading">Cargando…</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+
+    <!-- Detalle de película -->
+    <string name="movie_not_loaded">No se pudo cargar la película</string>
+    <string name="overview">Sinopsis</string>
+    <string name="spoken_languages">Idiomas hablados</string>
+    <string name="unknown_language">Desconocido</string>
+    <string name="status">Estado</string>
+    <string name="adult">Adulto</string>
+    <string name="budget">Presupuesto</string>
+    <string name="revenue">Recaudación</string>
+    <string name="unknown_runtime">Duración desconocida</string>
+    <string name="official_website">Web oficial</string>
 
     <!-- Errores -->
     <string name="error_invalid_credentials">Credenciales inválidas.</string>
