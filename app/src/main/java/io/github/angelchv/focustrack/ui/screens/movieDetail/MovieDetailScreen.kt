@@ -10,13 +10,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.SuggestionChip
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -36,6 +34,8 @@ import io.github.angelchv.focustrack.R
 import io.github.angelchv.focustrack.data.remote.tmdb.TMDBApi
 import io.github.angelchv.focustrack.data.remote.tmdb.TMDBApi.Companion.ImageSize
 import io.github.angelchv.focustrack.domain.model.MovieDetail
+import io.github.angelchv.focustrack.ui.components.movie.MovieGenresLazyRowChips
+import io.github.angelchv.focustrack.ui.components.movie.MovieSortInfoRow
 import io.github.angelchv.focustrack.ui.theme.FocusTrackTheme
 
 @Composable
@@ -109,50 +109,17 @@ fun MovieDetail(
                             .align(Alignment.CenterHorizontally)
                             .padding(horizontal = 16.dp),
                         text = "\"${it.tagline}\"",
+                        textAlign = TextAlign.Center,
                         color = MaterialTheme.colorScheme.tertiary
                     )
                 }
 
-                Row(
-                    modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
-                    horizontalArrangement = Arrangement.SpaceAround
-                ) {
-                    Text(
-                        text = it.releaseDate.orEmpty(),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.secondary
-                    )
-                    Text(
-                        text = "★ ${it.voteAverage} (${it.voteCount})",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                    Text(
-                        text = formatRuntime(it.runtime, stringResource(R.string.unknown_runtime)),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.secondary
-                    )
-                }
+                MovieSortInfoRow(
+                    it.releaseDate, it.voteAverage, it.voteCount, it.runtime,
+                    Modifier.padding(top = 16.dp).padding(horizontal = 16.dp)
+                )
 
-                LazyRow(
-                    Modifier
-                        .fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    items(it.genres.size) { index ->
-                        SuggestionChip(
-                            modifier = Modifier.padding(horizontal = 4.dp),
-                            label = {
-                                Text(
-                                    text = it.genres[index],
-                                    style = MaterialTheme.typography.bodyMedium,
-                                )
-                            },
-                            onClick = {}
-                        )
-                    }
-
-                }
+                MovieGenresLazyRowChips(it.genres)
 
                 Spacer(modifier = Modifier.height(16.dp))
 

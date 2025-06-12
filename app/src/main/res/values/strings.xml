@@ -48,6 +48,11 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
 
+    <!-- Search -->
+    <string name="search_placeholder">Search movies…</string>
+    <string name="no_results">No results found</string>
+    <string name="clear_query">Clear query</string>
+
     <!-- Movie Detail -->
     <string name="movie_not_loaded">Movie could not be loaded</string>
     <string name="overview">Overview</string>

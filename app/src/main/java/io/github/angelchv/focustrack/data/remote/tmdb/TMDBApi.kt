@@ -61,4 +61,10 @@ interface TMDBApi {
         @Path("movie_id") movieId: Int,
         @Query("language") language: String? = "en-US",
     ): TMDBMovieDetailDto
+
+    @GET("search/movie")
+    suspend fun searchMovies(
+        @Query("query") query: String,
+        @Query("language") language: String? = "en-US",
+    ): TMDBMoviesResponseDto
 }

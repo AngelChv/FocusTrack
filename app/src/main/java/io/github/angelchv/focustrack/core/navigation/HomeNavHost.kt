@@ -1,6 +1,5 @@
 package io.github.angelchv.focustrack.core.navigation
 
-import android.util.Log
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
@@ -31,7 +30,6 @@ fun HomeNavHost(
             HomeScreen(
                 scrollBehavior = scrollBehavior,
                 onNavigateToMovieDetail = { movieId ->
-                    Log.d("HomeNavHost", "Navigating to MovieDetailScreen with movieId $movieId")
                     navController.navigate(Route.MovieDetail(movieId))
                 })
         }

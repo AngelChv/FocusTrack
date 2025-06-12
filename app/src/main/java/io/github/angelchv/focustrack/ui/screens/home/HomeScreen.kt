@@ -29,7 +29,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import io.github.angelchv.focustrack.R
 import io.github.angelchv.focustrack.data.remote.tmdb.TMDBApi.Companion.ImageSize
 import io.github.angelchv.focustrack.domain.model.Movie
-import io.github.angelchv.focustrack.ui.components.MovieCard
+import io.github.angelchv.focustrack.ui.components.MoviePosterCard
+import io.github.angelchv.focustrack.ui.screens.search.SearchScreen
 import io.github.angelchv.focustrack.ui.theme.FocusTrackTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -41,11 +42,18 @@ fun HomeScreen(
 ) {
     val state = viewModel.uiState
 
-    Home(
-        state = state,
-        scrollBehavior = scrollBehavior,
-        onNavigateToMovieDetail = onNavigateToMovieDetail,
-    )
+    Column(
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        SearchScreen { onNavigateToMovieDetail(it) }
+
+        Home(
+            state = state,
+            scrollBehavior = scrollBehavior,
+            onNavigateToMovieDetail = onNavigateToMovieDetail,
+        )
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -150,7 +158,7 @@ fun MovieSection(
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             items(movies.size) { index ->
-                MovieCard(
+                MoviePosterCard(
                     movie = movies[index],
                     size = ImageSize.W185,
                     modifier = Modifier

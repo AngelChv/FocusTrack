@@ -40,4 +40,9 @@ class TMDBMovieService @Inject constructor(
         val language = TMDBApi.getTmdbLanguageTag(context)
         return api.getMovieDetailsById(movieId, language = language).toDomain()
     }
+
+    override suspend fun searchMovies(query: String): List<Movie> {
+        val language = TMDBApi.getTmdbLanguageTag(context)
+        return api.searchMovies(query, language = language).results.map { it.toDomainMovie() }
+    }
 }

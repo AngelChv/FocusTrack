@@ -47,6 +47,12 @@
     <string name="yes">Sí</string>
     <string name="no">No</string>
 
+    <!-- Búsqueda -->
+    <string name="search_placeholder">Buscar películas…</string>
+    <string name="no_results">No se encontraron resultados</string>
+    <string name="clear_query">Borrar búsqueda</string>
+
+
     <!-- Detalle de película -->
     <string name="movie_not_loaded">No se pudo cargar la película</string>
     <string name="overview">Sinopsis</string>

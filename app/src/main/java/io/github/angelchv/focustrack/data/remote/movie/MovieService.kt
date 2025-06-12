@@ -10,4 +10,5 @@ interface MovieService {
     suspend fun getNowPlayingMovies(): List<Movie>
     suspend fun getUpcomingMovies(): List<Movie>
     suspend fun getMovieDetailsById(movieId: Int): MovieDetail
+    suspend fun searchMovies(query: String): List<Movie>
 }
