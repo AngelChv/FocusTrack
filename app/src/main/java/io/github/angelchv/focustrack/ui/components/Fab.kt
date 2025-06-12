@@ -13,12 +13,32 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import io.github.angelchv.focustrack.R
 import io.github.angelchv.focustrack.data.di.activityViewModel
+import io.github.angelchv.focustrack.ui.components.movie.AddMovieToListsSheet
 import io.github.angelchv.focustrack.ui.screens.lists.UserListsViewModel
+import io.github.angelchv.focustrack.ui.screens.movieDetail.MovieDetailViewModel
 
 @Composable
-fun AddToListFab() {
-    FloatingActionButton({}) {
+fun AddToListFab(
+    listViewModel: UserListsViewModel = activityViewModel(),
+    movieViewModel: MovieDetailViewModel = activityViewModel()
+) {
+    val openSheet = remember { mutableStateOf(false) }
+    val userLists = listViewModel.uiState.userLists
+
+    FloatingActionButton(onClick = { openSheet.value = true }) {
         Icon(Icons.Default.Add, contentDescription = stringResource(R.string.add_to_list))
+    }
+
+    if (openSheet.value) {
+        AddMovieToListsSheet(
+            userLists = userLists,
+            onDismiss = { openSheet.value = false },
+            onConfirm = { selectedListIds ->
+                selectedListIds.forEach { listId ->
+                    movieViewModel.addMovieToList(listId)
+                }
+            }
+        )
     }
 }
 

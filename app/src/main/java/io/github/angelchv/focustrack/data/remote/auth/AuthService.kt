@@ -42,4 +42,6 @@ interface AuthService {
      * @return The current [User] if authenticated, `null` otherwise.
      */
     fun getCurrentUser(): User?
+
+    fun setAuthStateListener(onAuthStateChanged: (User?) -> Unit)
 }

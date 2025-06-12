@@ -12,11 +12,16 @@ fun ProfileNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController,
     startDestination: Route = Route.Profile,
+    onLogout: () -> Unit = {},
 ) {
     NavHost(
         navController, startDestination = startDestination,
         modifier = modifier,
     ) {
-        composable<Route.Profile> { ProfileScreen() }
+        composable<Route.Profile> {
+            ProfileScreen(
+                onLogout = onLogout
+            )
+        }
     }
 }

@@ -7,4 +7,6 @@ data class ListDetailUiState(
     val isLoading: Boolean = false,
     val list: UserList? = null,
     val movies: List<MovieDetail>? = null,
+    val errorMessage: String? = null,
+    val navigateBack: Boolean = false,
 )

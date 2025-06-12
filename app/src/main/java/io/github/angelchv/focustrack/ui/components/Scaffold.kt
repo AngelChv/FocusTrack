@@ -35,7 +35,7 @@ fun FocusTrackScaffold(
         topBar = {
             if (currentFlow is Route.Splash && currentRoute !is Route.Splash) FocusTrackTopAppBar()
             else if (currentRoute is Route.Home) HomeTopAppBar(scrollBehavior)
-            else if (currentFlow is Route.Lists) ListsTopAppBar()
+            else if (currentFlow is Route.Lists) ListsTopAppBar(scrollBehavior, currentRoute)
             else if (currentRoute is Route.Profile) ProfileTopAppBar()
         },
         bottomBar = {

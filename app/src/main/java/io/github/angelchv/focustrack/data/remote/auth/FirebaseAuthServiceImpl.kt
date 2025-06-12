@@ -2,6 +2,7 @@ package io.github.angelchv.focustrack.data.remote.auth
 
 import android.util.Log
 import com.google.firebase.auth.AuthCredential
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import io.github.angelchv.focustrack.core.errors.auth.AuthException
@@ -18,6 +19,7 @@ import javax.inject.Inject
  */
 class FirebaseAuthServiceImpl @Inject constructor() : AuthService {
     private val auth = Firebase.auth
+    private var authStateListener: FirebaseAuth.AuthStateListener? = null
 
     /**
      * Logs in a user via Firebase Authentication.
@@ -72,6 +74,19 @@ class FirebaseAuthServiceImpl @Inject constructor() : AuthService {
             return auth.currentUser?.toDomainUser()
         } catch (e: Exception) {
             throw e.toAuthException()
+        }
+    }
+
+    override fun setAuthStateListener(onAuthStateChanged: (User?) -> Unit) {
+        if (authStateListener != null) return
+
+        authStateListener = FirebaseAuth.AuthStateListener {
+            val firebaseUser = it.currentUser
+            onAuthStateChanged(firebaseUser?.toDomainUser())
+        }
+
+        if (authStateListener != null) {
+            auth.addAuthStateListener(authStateListener!!)
         }
     }
 }

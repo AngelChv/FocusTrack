@@ -28,9 +28,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import io.github.angelchv.focustrack.R
+import io.github.angelchv.focustrack.data.di.activityViewModel
 import io.github.angelchv.focustrack.data.remote.tmdb.TMDBApi
 import io.github.angelchv.focustrack.data.remote.tmdb.TMDBApi.Companion.ImageSize
 import io.github.angelchv.focustrack.domain.model.MovieDetail
@@ -40,7 +40,8 @@ import io.github.angelchv.focustrack.ui.theme.FocusTrackTheme
 
 @Composable
 fun MovieDetailScreen(
-    viewModel: MovieDetailViewModel = hiltViewModel(),
+    // Important! for use the same instance than the FAB
+    viewModel: MovieDetailViewModel = activityViewModel(),
 ) {
     val state = viewModel.uiState
 

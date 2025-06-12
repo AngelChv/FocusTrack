@@ -8,7 +8,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(
@@ -19,8 +18,6 @@ fun SplashScreen(
     val isSessionRestored = viewModel.isSessionRestored
 
     LaunchedEffect(isSessionRestored) {
-        delay(1000) // Todo: remove
-
         when (isSessionRestored) {
             true -> onSessionRestored()
             false -> onNavigateToLogin()

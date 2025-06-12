@@ -16,13 +16,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ListDetailViewModel @Inject constructor(
-    private val listRepository: UserListsRepository,
+    private val listDetailRepository: UserListsRepository,
     private val authRepository: AuthRepository,
     private val movieRepository: MovieRepository,
 ) : ViewModel() {
     var uiState by mutableStateOf(ListDetailUiState())
         private set
-
 
     fun loadListDetail(listId: String) {
         viewModelScope.launch {
@@ -30,7 +29,7 @@ class ListDetailViewModel @Inject constructor(
                 uiState = uiState.copy(isLoading = true)
                 val userId = authRepository.getCurrentUser()?.uid
                 if (userId == null) return@launch
-                val list = listRepository.getListById(userId, listId)
+                val list = listDetailRepository.getListById(userId, listId)
                 val movies = list?.movieIds?.map { movieId ->
                     movieRepository.getMovieDetailsById(movieId)
                 } ?: emptyList()
@@ -43,5 +42,66 @@ class ListDetailViewModel @Inject constructor(
                 uiState = uiState.copy(isLoading = false)
             }
         }
+    }
+
+    fun removeMovieFromList(movieId: Int) {
+        val list = uiState.list ?: return
+        viewModelScope.launch {
+            try {
+                uiState = uiState.copy(isLoading = true)
+                val userId = authRepository.getCurrentUser()?.uid
+                if (userId == null) return@launch
+
+                // Todo: Check if movie is removed correctly
+                if (listDetailRepository.removeMoveFromList(userId, list.id, movieId)) {
+                    // Update state removing the film
+                    val updatedMovieIds = list.movieIds - movieId
+                    val updatedMovies = uiState.movies?.filterNot { it.id == movieId }
+
+                    uiState = uiState.copy(
+                        list = list.copy(movieIds = updatedMovieIds),
+                        movies = updatedMovies
+                    )
+                }
+
+                uiState = uiState.copy(isLoading = false)
+            } catch (e: HttpException) {
+                Log.e("ListDetailViewModel", "Error removing the movie to the list", e)
+                uiState = uiState.copy(isLoading = false)
+            } catch (e: Exception) {
+                Log.e("ListDetailViewModel", "Error removing the movie to the list", e)
+                uiState = uiState.copy(isLoading = false)
+            }
+        }
+    }
+
+    fun deleteCurrentList() {
+        Log.d("ListDetailViewModel", "deleteCurrentList()")
+        Log.d("ListDetailViewModel", "list: ${uiState.list}")
+        val list = uiState.list ?: return
+        deleteList(list.id)
+    }
+
+    fun deleteList(listId: String) {
+        uiState = uiState.copy(isLoading = true)
+        viewModelScope.launch {
+            try {
+                val userId = authRepository.getCurrentUser()?.uid ?: return@launch
+                uiState = if (listDetailRepository.deleteListById(userId, listId)) {
+                    Log.d("ListDetailViewModel", "deleteCurrentList() successful")
+                    uiState.copy(navigateBack = true, isLoading = false)
+                } else {
+                    Log.e("ListDetailViewModel", "Error deleting list")
+                    uiState.copy(errorMessage = "Error deleting list", isLoading = false)
+                }
+            } catch (e: Exception) {
+                Log.e("ListDetailViewModel", "Error deleting list", e)
+                uiState = uiState.copy(errorMessage = "Error deleting list", isLoading = false)
+            }
+        }
+    }
+
+    fun onNavigatedBack() {
+        uiState = uiState.copy(navigateBack = false)
     }
 }

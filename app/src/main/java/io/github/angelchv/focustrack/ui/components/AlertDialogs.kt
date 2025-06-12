@@ -60,6 +60,44 @@ fun CreateListDialog(
     )
 }
 
+@Composable
+fun ConfirmDialog(
+    onDismissRequest: () -> Unit = {},
+    onConfirmation: () -> Unit,
+    dialogTitle: String,
+    dialogMessage: String? = null,
+) {
+    AlertDialog(
+        title = {
+            Text(text = dialogTitle)
+        },
+        text = dialogMessage?.let {
+            {Text(dialogMessage)}
+        },
+        onDismissRequest = {
+            onDismissRequest()
+        },
+        confirmButton = {
+            TextButton(
+                onClick = {
+                    onConfirmation()
+                }
+            ) {
+                Text(stringResource(R.string.confirm))
+            }
+        },
+        dismissButton = {
+            TextButton(
+                onClick = {
+                    onDismissRequest()
+                }
+            ) {
+                Text(stringResource(R.string.dismiss))
+            }
+        }
+    )
+}
+
 @Preview
 @Composable
 fun CreateListDialogPreview() {

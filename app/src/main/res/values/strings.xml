@@ -47,6 +47,10 @@
     <string name="list_name">List name</string>
     <string name="create_list">Create List</string>
     <string name="add_to_list">Add to list</string>
+    <string name="remove_movie_from_list">Remove movie from list</string>
+    <string name="delete_list">Delete list</string>
+    <string name="edit_list">Edit list</string>
+    <string name="logout">Logout</string>
 
     <!-- Generic -->
     <string name="loading">Loading…</string>
@@ -54,6 +58,7 @@
     <string name="no">No</string>
     <string name="confirm">Confirm</string>
     <string name="dismiss">Dismiss</string>
+    <string name="remove">Remove</string>
 
     <!-- Search -->
     <string name="search_placeholder">Search movies…</string>

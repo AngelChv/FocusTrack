@@ -1,5 +1,6 @@
 package io.github.angelchv.focustrack.ui.screens.lists
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -42,6 +43,14 @@ class UserListsViewModel @Inject constructor(
             val success = listRepository.addList(userId, name)
             if (success) loadLists()
             uiState = uiState.copy(isLoading = false)
+        }
+    }
+
+    fun removeList(listId: String, onComplete: () -> Unit = {}) {
+        Log.d("UserListsViewModel", "removeList in viewModel")
+        viewModelScope.launch {
+            uiState = uiState.copy(userLists = uiState.userLists.filterNot { it.id == listId })
+            onComplete()
         }
     }
 }

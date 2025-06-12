@@ -1,6 +1,7 @@
 package io.github.angelchv.focustrack.data.remote.userList
 
 import android.util.Log
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import io.github.angelchv.focustrack.domain.dto.CreateUserListDto
 import io.github.angelchv.focustrack.domain.model.UserList
@@ -17,7 +18,7 @@ class FirebaseListsService @Inject constructor() : UserListsService {
                 .collection("lists")
                 .get()
                 .await()
-                .map { it.toObject(UserList::class.java).copy(tmdbId = it.id) }
+                .map { it.toObject(UserList::class.java).copy(id = it.id) }
         } catch (e: Exception) {
             Log.e("FirebaseListsService", "Error getting lists", e)
             emptyList()
@@ -49,7 +50,7 @@ class FirebaseListsService @Inject constructor() : UserListsService {
                 .await()
 
             if (snapshot.exists()) {
-                snapshot.toObject(UserList::class.java)?.copy(tmdbId = snapshot.id)
+                snapshot.toObject(UserList::class.java)?.copy(id = snapshot.id)
             } else {
                 null
             }
@@ -59,4 +60,59 @@ class FirebaseListsService @Inject constructor() : UserListsService {
         }
     }
 
+    override suspend fun addMovieToList(
+        userId: String,
+        listId: String,
+        movieId: Int,
+    ): Boolean {
+        return try {
+            firestore.collection("users")
+                .document(userId)
+                .collection("lists")
+                .document(listId)
+                .update("movieIds", FieldValue.arrayUnion(movieId))
+                .await()
+            true
+        } catch (e: Exception) {
+            Log.e("FirebaseListsService", "Error adding movie to list", e)
+            false
+        }
+    }
+
+    override suspend fun removeMovieFromList(
+        userId: String,
+        listId: String,
+        movieId: Int,
+    ): Boolean {
+        return try {
+            firestore.collection("users")
+                .document(userId)
+                .collection("lists")
+                .document(listId)
+                .update("movieIds", FieldValue.arrayRemove(movieId))
+                .await()
+            true
+        } catch (e: Exception) {
+            Log.e("FirebaseListsService", "Error removing movie from list", e)
+            false
+        }
+    }
+
+    override suspend fun deleteListById(
+        userId: String,
+        listId: String,
+    ): Boolean {
+        return try {
+            firestore.collection("users")
+                .document(userId)
+                .collection("lists")
+                .document(listId)
+                .delete()
+                .await()
+            true
+        } catch (e: Exception) {
+            Log.e("FirebaseListsService", "Error deleting list", e)
+            false
+        }
+    }
 }

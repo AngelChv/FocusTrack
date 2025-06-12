@@ -131,11 +131,12 @@ fun Search(
                 items(state.results.size) { movieId ->
                     MovieCardInfo(
                         movie = state.results[movieId],
-                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)
-                    ) { movieClickedId ->
-                        onMovieClick(movieClickedId)
-                        setExpanded(false)
-                    }
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                        onClick = { movieClickedId ->
+                            onMovieClick(movieClickedId)
+                            setExpanded(false)
+                        }
+                    )
                 }
             }
         }

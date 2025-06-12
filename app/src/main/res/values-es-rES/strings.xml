@@ -46,6 +46,10 @@
     <string name="list_name">Nombre de la lista</string>
     <string name="create_list">Crear Lista</string>
     <string name="add_to_list">Añadir a lista</string>
+    <string name="remove_movie_from_list">Eliminar película de la lista</string>
+    <string name="delete_list">Eliminar lista</string>
+    <string name="edit_list">Editar lista</string>
+    <string name="logout">Cerrar sesión</string>
 
     <!-- Genéricos -->
     <string name="loading">Cargando…</string>
@@ -53,6 +57,7 @@
     <string name="no">No</string>
     <string name="confirm">Confirmar</string>
     <string name="dismiss">Cancelar</string>
+    <string name="remove">Eliminar</string>
 
     <!-- Búsqueda -->
     <string name="search_placeholder">Buscar películas…</string>
