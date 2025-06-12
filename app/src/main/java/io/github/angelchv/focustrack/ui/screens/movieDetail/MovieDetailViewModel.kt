@@ -20,12 +20,10 @@ class MovieDetailViewModel @Inject constructor(
         private set // Only the ViewModel can update the state
 
     fun loadMovieDetail(movieId: Int) {
-        Log.d("MovieDetailViewModel", "Loading movie detail for movieId: $movieId")
         viewModelScope.launch {
             try {
                 uiState = uiState.copy(isLoading = true)
                 val movie = movieRepository.getMovieDetailsById(movieId)
-                Log.d("MovieDetailViewModel", "Loaded movie detail: $movie")
                 uiState = uiState.copy(isLoading = false, movieDetail = movie)
             } catch (e: HttpException) {
                 Log.e("MovieDetailViewModel", "Error loading movie", e)

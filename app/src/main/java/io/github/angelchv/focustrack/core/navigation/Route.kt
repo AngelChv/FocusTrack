@@ -31,7 +31,7 @@ sealed interface Route {
     data class MovieDetail(val movieId: Int? = null) : Route
 
     @Serializable
-    object ListDetail : Route
+    data class ListDetail(val listId: String? = null) : Route
 
     companion object {
         val mainFlows = listOf(Home, Search, Lists, Profile)
@@ -47,7 +47,7 @@ sealed interface Route {
                 Search::class.simpleName -> Search
                 Lists::class.simpleName -> Lists
                 Profile::class.simpleName -> Profile
-                ListDetail::class.simpleName -> ListDetail
+                ListDetail::class.simpleName -> ListDetail()
                 MovieDetail::class.simpleName -> MovieDetail()
                 else -> null
             }

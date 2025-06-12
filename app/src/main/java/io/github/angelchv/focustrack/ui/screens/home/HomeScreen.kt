@@ -76,9 +76,12 @@ fun Home(
                 MovieSection(
                     title = stringResource(R.string.trending),
                     movies = trendingMovies,
-                    // Todo: send movieId to detail
                     onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
                 )
+            }
+        } ?: run {
+            item {
+                Text("Unable to load", modifier = Modifier.padding(16.dp))
             }
         }
 
@@ -87,9 +90,12 @@ fun Home(
                 MovieSection(
                     title = stringResource(R.string.popular),
                     movies = popularMovies,
-                    // Todo: send movieId to detail
                     onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
                 )
+            }
+        } ?: run {
+            if (!state.isLoading) item {
+                Text("Unable to load", modifier = Modifier.padding(16.dp))
             }
         }
 
@@ -98,9 +104,12 @@ fun Home(
                 MovieSection(
                     title = stringResource(R.string.top_rated),
                     movies = topRatedMovies,
-                    // Todo: send movieId to detail
                     onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
                 )
+            }
+        } ?: run {
+            if (!state.isLoading) item {
+                Text("Unable to load", modifier = Modifier.padding(16.dp))
             }
         }
 
@@ -109,9 +118,12 @@ fun Home(
                 MovieSection(
                     title = stringResource(R.string.now_playing),
                     movies = nowPlayingMovies,
-                    // Todo: send movieId to detail
                     onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
                 )
+            }
+        } ?: run {
+            if (!state.isLoading) item {
+                Text("Unable to load", modifier = Modifier.padding(16.dp))
             }
         }
 
@@ -120,9 +132,12 @@ fun Home(
                 MovieSection(
                     title = stringResource(R.string.upcoming),
                     movies = upcomingMovies,
-                    // Todo: send movieId to detail
                     onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
                 )
+            }
+        } ?: run {
+            if (!state.isLoading) item {
+                Text("Unable to load", modifier = Modifier.padding(16.dp))
             }
         }
     }

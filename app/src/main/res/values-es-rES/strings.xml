@@ -42,10 +42,17 @@
     <!-- Película -->
     <string name="movie_poster">Poster de la película</string>
 
+    <!-- Lista -->
+    <string name="list_name">Nombre de la lista</string>
+    <string name="create_list">Crear Lista</string>
+    <string name="add_to_list">Añadir a lista</string>
+
     <!-- Genéricos -->
     <string name="loading">Cargando…</string>
     <string name="yes">Sí</string>
     <string name="no">No</string>
+    <string name="confirm">Confirmar</string>
+    <string name="dismiss">Cancelar</string>
 
     <!-- Búsqueda -->
     <string name="search_placeholder">Buscar películas…</string>

@@ -35,6 +35,7 @@ fun FocusTrackScaffold(
         topBar = {
             if (currentFlow is Route.Splash && currentRoute !is Route.Splash) FocusTrackTopAppBar()
             else if (currentRoute is Route.Home) HomeTopAppBar(scrollBehavior)
+            else if (currentFlow is Route.Lists) ListsTopAppBar()
             else if (currentRoute is Route.Profile) ProfileTopAppBar()
         },
         bottomBar = {
@@ -46,9 +47,12 @@ fun FocusTrackScaffold(
                 onFlowSelected = onFlowSelected,
             )
         },
-        floatingActionButtonPosition = FabPosition.EndOverlay,
+        floatingActionButtonPosition =
+            if (currentRoute is Route.MovieDetail) FabPosition.EndOverlay
+            else FabPosition.End,
         floatingActionButton = {
             if (currentRoute is Route.MovieDetail) AddToListFab()
+            else if (currentRoute is Route.Lists) CreateListFab()
         }
     ) { paddingValues: PaddingValues ->
         Box(

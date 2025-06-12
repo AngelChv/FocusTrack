@@ -12,8 +12,11 @@ import io.github.angelchv.focustrack.data.remote.auth.FirebaseAuthServiceImpl
 import io.github.angelchv.focustrack.data.remote.movie.MovieService
 import io.github.angelchv.focustrack.data.remote.movie.TMDBMovieService
 import io.github.angelchv.focustrack.data.remote.tmdb.TMDBApi
+import io.github.angelchv.focustrack.data.remote.userList.FirebaseListsService
+import io.github.angelchv.focustrack.data.remote.userList.UserListsService
 import io.github.angelchv.focustrack.data.repository.AuthRepository
 import io.github.angelchv.focustrack.data.repository.MovieRepository
+import io.github.angelchv.focustrack.data.repository.UserListsRepository
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -77,4 +80,13 @@ object AppModule {
     @Singleton
     fun provideMovieRepository(movieService: MovieService): MovieRepository =
         MovieRepository(movieService)
+
+    @Provides
+    @Singleton
+    fun provideUserListsService(): UserListsService = FirebaseListsService()
+
+    @Provides
+    @Singleton
+    fun provideUserListsRepository(listsService: UserListsService): UserListsRepository =
+        UserListsRepository(listsService)
 }

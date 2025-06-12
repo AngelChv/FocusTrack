@@ -23,6 +23,23 @@ data class MovieDetail(
     val budget: Int,
     val revenue: Int
 ) {
+    fun toMovie(): Movie {
+        return Movie(
+            id = id,
+            title = title,
+            overview = overview,
+            posterPath = posterPath,
+            backdropPath = backdropPath,
+            adult = adult,
+            originalLanguage = originalLanguage,
+            genreIds = emptyList(),
+            popularity = 0.0, // Todo: change model to nullable
+            releaseDate = releaseDate,
+            voteAverage = voteAverage,
+            voteCount = voteCount
+        )
+    }
+
     companion object {
         val example = MovieDetail(
             id = 123,
