@@ -107,7 +107,6 @@ fun MovieDetail(
                     Text(
                         modifier = Modifier
                             .align(Alignment.CenterHorizontally)
-                            .padding(bottom = 16.dp)
                             .padding(horizontal = 16.dp),
                         text = "\"${it.tagline}\"",
                         color = MaterialTheme.colorScheme.tertiary
@@ -115,7 +114,7 @@ fun MovieDetail(
                 }
 
                 Row(
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
                     horizontalArrangement = Arrangement.SpaceAround
                 ) {
                     Text(

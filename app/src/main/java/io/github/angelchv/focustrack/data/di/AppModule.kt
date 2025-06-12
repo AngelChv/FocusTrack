@@ -1,9 +1,11 @@
 package io.github.angelchv.focustrack.data.di
 
+import android.content.Context
 import io.github.angelchv.focustrack.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import io.github.angelchv.focustrack.data.remote.auth.AuthService
 import io.github.angelchv.focustrack.data.remote.auth.FirebaseAuthServiceImpl
@@ -66,7 +68,10 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMovieService(tmdbApi: TMDBApi): MovieService = TMDBMovieService(tmdbApi)
+    fun provideMovieService(
+        tmdbApi: TMDBApi,
+        @ApplicationContext context: Context,
+    ): MovieService = TMDBMovieService(tmdbApi, context)
 
     @Provides
     @Singleton

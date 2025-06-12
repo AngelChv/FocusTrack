@@ -28,6 +28,14 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="settings">Settings</string>
 
+    <!-- Home Sections -->
+    <string name="trending">Trending</string>
+    <string name="popular">Popular</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="see_more">See more</string>
+
     <!-- Profile -->
     <string name="profile_photo">Profile photo</string>
     <string name="no_profile_photo">No profile photo</string>

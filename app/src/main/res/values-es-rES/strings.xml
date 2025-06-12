@@ -27,6 +27,14 @@
     <string name="edit_profile">Editar perfil</string>
     <string name="settings">Ajustes</string>
 
+    <!-- Secciones de inicio -->
+    <string name="trending">Tendencias</string>
+    <string name="popular">Populares</string>
+    <string name="top_rated">Mejor Valoradas</string>
+    <string name="now_playing">En Cines</string>
+    <string name="upcoming">Por Estrenar</string>
+    <string name="see_more">Ver más</string>
+
     <!-- Perfil -->
     <string name="profile_photo">Foto de perfil</string>
     <string name="no_profile_photo">No hay foto de perfil</string>

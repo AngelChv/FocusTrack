@@ -1,6 +1,5 @@
 package io.github.angelchv.focustrack.ui.screens.home
 
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -23,9 +22,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import io.github.angelchv.focustrack.R
 import io.github.angelchv.focustrack.data.remote.tmdb.TMDBApi.Companion.ImageSize
 import io.github.angelchv.focustrack.domain.model.Movie
 import io.github.angelchv.focustrack.ui.components.MovieCard
@@ -63,8 +64,9 @@ fun Home(
     ) {
         state.trendingMovies?.let { trendingMovies ->
             item {
+                // Todo: implement filter for week or day
                 MovieSection(
-                    title = "Tendencias",
+                    title = stringResource(R.string.trending),
                     movies = trendingMovies,
                     // Todo: send movieId to detail
                     onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
@@ -75,7 +77,7 @@ fun Home(
         state.popularMovies?.let { popularMovies ->
             item {
                 MovieSection(
-                    title = "Populares",
+                    title = stringResource(R.string.popular),
                     movies = popularMovies,
                     // Todo: send movieId to detail
                     onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
@@ -86,7 +88,7 @@ fun Home(
         state.topRatedMovies?.let { topRatedMovies ->
             item {
                 MovieSection(
-                    title = "Mejor Valoradas",
+                    title = stringResource(R.string.top_rated),
                     movies = topRatedMovies,
                     // Todo: send movieId to detail
                     onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
@@ -97,7 +99,7 @@ fun Home(
         state.nowPlayingMovies?.let { nowPlayingMovies ->
             item {
                 MovieSection(
-                    title = "En Cines",
+                    title = stringResource(R.string.now_playing),
                     movies = nowPlayingMovies,
                     // Todo: send movieId to detail
                     onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
@@ -108,7 +110,7 @@ fun Home(
         state.upcomingMovies?.let { upcomingMovies ->
             item {
                 MovieSection(
-                    title = "Por Estrenar",
+                    title = stringResource(R.string.upcoming),
                     movies = upcomingMovies,
                     // Todo: send movieId to detail
                     onMovieClick = { movieId -> onNavigateToMovieDetail(movieId) }
@@ -155,7 +157,6 @@ fun MovieSection(
                         .width(120.dp)
                         .aspectRatio(2 / 3f),
                     onClick = {
-                        Log.d("Home", "Clicked on movie ${movies[index].title}")
                         onMovieClick(movies[index].id)
                     },
                 )
