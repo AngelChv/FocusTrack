@@ -7,7 +7,7 @@
 ## Documentación
 
 - **Memoria del proyecto**: [Chicote_Veganzones_Angel_Memoria_ProyectoFinal_DAM25.pdf](./Chicote_Veganzones_Angel_Memoria_ProyectoFinal_DAM25.pdf)  
-- **Manual de usuario**: [Chicote_Veganzones_Angel_Manual2_ProyectoFinal_DAM25.pdf](./Chicote_Veganzones_Angel_Manual2_ProyectoFinal_DAM25.pdf)  
+- **Manual de usuario**: [Chicote_Veganzones_Angel_Manual2_ProyectoFinal_DAM25.pdf](./Chicote_Veganzones_Angel_Manual_ProyectoFinal_DAM25.pdf)  
 
 ---
 
