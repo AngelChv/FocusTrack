@@ -1,47 +1,44 @@
-# 🎬 Inicio
+# FocusTrack
 
-**FocusTrack** es una aplicación minimalista para organizar y seguir las películas que has visto, quieres ver o que te gustan.
-
-> Una experiencia centrada en el usuario, simple y accesible.
+**FocusTrack** es una aplicación móvil minimalista para organizar y seguir tus películas favoritas en múltiples listas personalizadas.
 
 ---
 
-## 🌐 Idiomas / Languages
+## Documentación
 
-- 🇪🇸 [Español](#focustrack-en-español)
-- 🇬🇧 [English](#focustrack-in-english)
-
----
-
-## 🗑️ Eliminar cuenta / Delete Account
-
-¿Quieres eliminar tu cuenta?
-
-- 🇪🇸 [Instrucciones en español](https://angelchv.github.io/FocusTrack/delete-account-es)
-- 🇬🇧 [Instructions in English](https://angelchv.github.io/FocusTrack/delete-account-en)
+- **Memoria del proyecto**: [Chicote_Veganzones_Angel_Memoria_ProyectoFinal_DAM25.pdf](./Chicote_Veganzones_Angel_Memoria_ProyectoFinal_DAM25.pdf)  
+- **Manual de usuario**: [Chicote_Veganzones_Angel_Manual2_ProyectoFinal_DAM25.pdf](./Chicote_Veganzones_Angel_Manual2_ProyectoFinal_DAM25.pdf)  
 
 ---
 
-## 📱 FocusTrack en Español
+## Sitio web
 
-FocusTrack es una app para:
-
-- ✅ Llevar el control de tus películas vistas y pendientes.
-- ✅ Crear listas personalizadas.
-- ✅ Guardar tus favoritas.
-- ✅ Recibir recomendaciones.
-- ✅ Usar múltiples temas e idiomas.
+- **Español**: https://angelchv.github.io/FocusTrack/es/  
+- **English**: https://angelchv.github.io/FocusTrack/  
 
 ---
 
-## 📱 FocusTrack in English
+## Descripción
 
-FocusTrack is an app to:
+FocusTrack permite a los usuarios:
 
-- ✅ Keep track of watched and pending movies.
-- ✅ Create custom movie lists.
-- ✅ Save your favorites.
-- ✅ Get recommendations.
-- ✅ Enjoy multilingual themes and UI.
+- Autenticarse de forma segura (correo/contraseña y Google Sign-In).  
+- Explorar secciones de películas: Tendencias, Populares, Mejor valoradas, En cines y Próximas.  
+- Buscar películas con sugerencias en tiempo real.  
+- Crear, editar y eliminar **listas personalizadas** (\"Quiero ver\", \"Vistas\", \"Favoritas\", etc.).  
+- Añadir películas de cada lista mediante un **Bottom Sheet** con casillas.  
+- Consultar el detalle completo de cada película: sinopsis, géneros, puntuación, presupuesto, recaudación y más.  
+- Disfrutar de una interfaz adaptativa siguiendo **Material Design 3** y compatible con temas dinámicos.  
+
+---
+
+## ⚙️ Tecnologías
+
+- **Lenguaje**: Kotlin  
+- **UI**: Jetpack Compose (Material 3)  
+- **Backend**: TMDb API (Retrofit + OkHttp), Firebase Auth & Firestore  
+- **DI**: Hilt  
+- **Credenciales**: AndroidX Credentials  
+- **Construcción**: Gradle (Kotlin DSL)  
 
 ---
